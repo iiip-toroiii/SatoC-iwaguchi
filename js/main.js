@@ -2,14 +2,14 @@
 (() => {
   'use strict';
   const header = document.querySelector('.site-header');
-  const hero = document.querySelector('.hero');
+  const heroTitle = document.querySelector('#hero-title');
   const toggle = document.querySelector('.menu-toggle');
   const nav = document.querySelector('#primary-navigation');
 
-  if (header && hero) {
+  if (header && heroTitle) {
     function updateHeaderBackground() {
-      const heroBottom = hero.getBoundingClientRect().bottom;
-      header.classList.toggle('is-past-hero', heroBottom <= header.offsetHeight);
+      const titleTop = heroTitle.getBoundingClientRect().top;
+      header.classList.toggle('is-past-hero', titleTop <= header.offsetHeight);
     }
 
     window.addEventListener('scroll', updateHeaderBackground, { passive: true });

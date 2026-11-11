@@ -29,10 +29,10 @@
   <a class="brand brand--image" href="#top" aria-label="佐藤医院 トップへ"><img src="assets/images/clinic-logo.png" width="500" height="150" alt="佐藤医院 Sato Clinic"></a>
   <button class="menu-toggle" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="primary-navigation"><span></span><span></span><span></span></button>
   <nav class="primary-navigation" id="primary-navigation" aria-label="メインナビゲーション">
-   <ul><li><a href="#hours">診療時間</a></li>
+   <ul><li class="nav-hours"><a href="#hours">診療時間</a><div class="nav-hours__preview"><h2>診療時間</h2><div class="nav-hours__table-wrap"><table class="nav-hours__table" aria-label="診療時間"><thead><tr><th>時間帯</th><th>月</th><th>火</th><th>水</th><th>木</th><th>金</th><th>土</th><th>日</th></tr></thead><tbody><tr><th>午前<br>9:00〜12:00</th><td>診療</td><td>診療</td><td>診療</td><td>休診</td><td>診療</td><td>診療</td><td>休診</td></tr><tr><th>午後<br>13:00〜18:00</th><td>診療</td><td>診療</td><td>診療</td><td>休診</td><td>診療</td><td>休診</td><td>休診</td></tr></tbody></table></div><p>休診日：木曜・土曜午後・日曜</p></div></li>
 <li><a href="#news">お知らせ</a></li>
 <li><a href="#greeting">院長挨拶</a></li>
-<li><a href="#services">診療内容</a></li>
+<li class="nav-services"><a href="#services">診療内容</a><div class="nav-services__preview"><h2>診療内容</h2><ul><li><a href="#service-general">一般内科診療</a></li><li><a href="#service-lifestyle">生活習慣病の診断・治療</a></li><li><a href="#service-digestive">消化器系の診療</a></li><li><a href="#service-respiratory">呼吸器系の診療</a></li></ul></div></li>
 <li><a href="#about">当院について</a></li>
 <li><a href="#staff">スタッフ紹介</a></li>
 <li class="nav-access"><a href="#access">アクセス</a><div class="nav-access__preview"><img src="assets/images/map.jpg" alt="上野駅周辺の地図" loading="lazy"><div class="nav-access__contact"><h2>お問い合わせ</h2><p>電話番号：<a href="tel:0000000000">00-0000-0000</a></p><p>FAX：00-0000-0000</p><p>メール：<a href="mailto:info@sato-clinic-test.jp">info@sato-clinic-test.jp</a></p></div></div></li></ul>
@@ -72,10 +72,10 @@
  <section class="section section--services" id="services"><div class="container">
  <h2 class="section-heading"><span>診療内容</span></h2>
  <p class="section-intro">当院では、地域の皆様の健康を支えるため、幅広い内科診療を行っております。日常的な体調管理から、各種の検査や治療に至るまで、どんなお悩みもお気軽にご相談ください。</p>
- <div class="services-grid"><article class="service-card"><img class="service-card__image" src="assets/illustrations/sato_icon_general_internal_medicine.png" alt="" loading="lazy"/><h3>一般内科診療</h3><p>風邪や発熱、喉の痛み、頭痛、腹痛などの症状を中心に、一般的な体調不良の診療を行っています。また、原因不明の不調や軽い症状であっても、早期診断に努めております。</p></article>
-<article class="service-card"><img class="service-card__image" src="assets/illustrations/sato_icon_lifestyle_disease.png" alt="" loading="lazy"/><h3>生活習慣病の診断・治療</h3><p>高血圧症、糖尿病、脂質異常症（高コレステロール血症）、メタボリック症候群など、生活習慣病の診断と治療を行います。病気の進行を予防し、健康維持のための生活指導や薬物療法を行います。</p></article>
-<article class="service-card"><img class="service-card__image" src="assets/illustrations/sato_icon_gastroenterology.png" alt="" loading="lazy"/><h3>消化器系の診療</h3><p>胃痛、胃もたれ、胸やけ、便秘、下痢などの消化器系の不調に対応しています。必要に応じて胃カメラや超音波検査などを実施し、胃腸の健康をサポートします。</p></article>
-<article class="service-card"><img class="service-card__image" src="assets/illustrations/sato_icon_respiratory.png" alt="" loading="lazy"/><h3>呼吸器系の診療</h3><p>咳、息切れ、胸の痛みなど、呼吸器系の症状について診療を行っています。季節性の喘息やアレルギー性鼻炎、慢性閉塞性肺疾患（COPD）などにも対応し、適切な治療と予防をサポートします。</p></article></div>
+ <div class="services-grid"><article class="service-card" id="service-general"><img class="service-card__image" src="assets/illustrations/sato_icon_general_internal_medicine.png" alt="" loading="lazy"/><h3>一般内科診療</h3><p>風邪や発熱、喉の痛み、頭痛、腹痛などの症状を中心に、一般的な体調不良の診療を行っています。また、原因不明の不調や軽い症状であっても、早期診断に努めております。</p></article>
+<article class="service-card" id="service-lifestyle"><img class="service-card__image" src="assets/illustrations/sato_icon_lifestyle_disease.png" alt="" loading="lazy"/><h3>生活習慣病の診断・治療</h3><p>高血圧症、糖尿病、脂質異常症（高コレステロール血症）、メタボリック症候群など、生活習慣病の診断と治療を行います。病気の進行を予防し、健康維持のための生活指導や薬物療法を行います。</p></article>
+<article class="service-card" id="service-digestive"><img class="service-card__image" src="assets/illustrations/sato_icon_gastroenterology.png" alt="" loading="lazy"/><h3>消化器系の診療</h3><p>胃痛、胃もたれ、胸やけ、便秘、下痢などの消化器系の不調に対応しています。必要に応じて胃カメラや超音波検査などを実施し、胃腸の健康をサポートします。</p></article>
+<article class="service-card" id="service-respiratory"><img class="service-card__image" src="assets/illustrations/sato_icon_respiratory.png" alt="" loading="lazy"/><h3>呼吸器系の診療</h3><p>咳、息切れ、胸の痛みなど、呼吸器系の症状について診療を行っています。季節性の喘息やアレルギー性鼻炎、慢性閉塞性肺疾患（COPD）などにも対応し、適切な治療と予防をサポートします。</p></article></div>
  </div></section>
  <!-- 06. 当院について（原稿指定の概要のみ） -->
  <section class="section section--about" id="about"><div class="container">

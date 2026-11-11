@@ -76,7 +76,7 @@ button {font: inherit;}
 .brand__wordmark {display:flex;flex-direction:column;white-space:nowrap;}
 .brand__wordmark strong {font-size:clamp(23px,2.3vw,31px);font-weight:800;letter-spacing:.075em;text-shadow:0 1px 3px #fff;}
 .brand__wordmark small {font-family:Georgia,serif;color:var(--color-green);font-size:13px;letter-spacing:.03em;}
-.primary-navigation ul {display:flex;align-items:center;gap:clamp(14px,1.5vw,24px);list-style:none;padding:0;margin:0;}
+.primary-navigation ul {display:flex;align-items:center;gap:clamp(24px,calc(1.5vw + 10px),34px);list-style:none;padding:0;margin:0;}
 .primary-navigation a {font-size:22px;font-weight:700;letter-spacing:.06em;color:#28524a;text-shadow:0 1px 4px #fffc;white-space:nowrap;text-decoration:none;padding:9px 2px;border-bottom:2px solid transparent;transition:color .2s,border-color .2s;}
 .primary-navigation a:hover,.primary-navigation a:focus-visible {color:var(--color-green-deep);border-color:var(--color-green);}
 .nav-access {position:relative;}
@@ -86,6 +86,22 @@ button {font: inherit;}
 .nav-access__contact h2 {margin:0 0 8px;font-size:18px;color:#285b47;}
 .nav-access__contact p {margin:4px 0;font-size:14px;line-height:1.55;overflow-wrap:anywhere;}
 .nav-access__contact a {font-size:inherit;letter-spacing:normal;color:var(--color-green-deep);text-shadow:none;white-space:normal;text-decoration:underline;padding:0;border:0;}
+.nav-hours,.nav-services {position:relative;}
+.nav-hours__preview,.nav-services__preview {position:absolute;top:100%;left:0;z-index:5;padding:16px;background:#fffffffa;border:1px solid #c8e5d5;border-radius:16px;box-shadow:0 12px 28px #266d4840;opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .18s,transform .18s,visibility .18s;}
+.nav-hours__preview {width:min(620px,calc(100vw - 32px));}
+.nav-services__preview {width:300px;}
+.nav-hours:hover .nav-hours__preview,.nav-hours:focus-within .nav-hours__preview,.nav-services:hover .nav-services__preview,.nav-services:focus-within .nav-services__preview {opacity:1;visibility:visible;transform:translateY(0);}
+.nav-hours__preview h2,.nav-services__preview h2 {margin:0 0 10px;font-size:18px;color:#285b47;}
+.nav-hours__table-wrap {overflow-x:auto;}
+.nav-hours__table {width:100%;border-collapse:separate;border-spacing:3px;table-layout:fixed;text-align:center;font-size:12px;line-height:1.4;}
+.nav-hours__table th,.nav-hours__table td {padding:6px 3px;border-radius:6px;background:#e8f4ec;}
+.nav-hours__table thead th {background:#d4ebde;color:#315147;}
+.nav-hours__table tbody th {background:#e5def1;}
+.nav-hours__table td:nth-child(5),.nav-hours__table td:last-child {background:#f6dfe3;}
+.nav-hours__preview p {margin:8px 0 0;font-size:12px;color:#55696c;}
+.nav-services__preview ul {display:grid;gap:4px;list-style:none;padding:0;margin:0;}
+.nav-services__preview li a {display:block;padding:8px 6px;border:0;border-radius:6px;font-size:15px;letter-spacing:normal;line-height:1.5;text-shadow:none;white-space:normal;}
+.nav-services__preview li a:hover,.nav-services__preview li a:focus-visible {background:#e8f4ec;}
 .menu-toggle {display:none;}
 
 /* -----------------------------------------------------
@@ -296,6 +312,11 @@ button {font: inherit;}
   .nav-access__preview {position:static;display:none;grid-template-columns:minmax(0,1fr);width:100%;padding:12px;border-radius:12px;box-shadow:none;opacity:1;visibility:visible;transform:none;}
   .nav-access:hover .nav-access__preview,.nav-access:focus-within .nav-access__preview {display:grid;}
   .nav-access__preview > img {height:150px;min-height:0;}
+  .nav-hours__preview,.nav-services__preview {position:static;display:none;width:100%;padding:12px;border-radius:12px;box-shadow:none;opacity:1;visibility:visible;transform:none;}
+  .nav-hours:hover .nav-hours__preview,.nav-hours:focus-within .nav-hours__preview {display:block;}
+  .nav-services:hover .nav-services__preview,.nav-services:focus-within .nav-services__preview {display:block;}
+  .nav-hours__table {min-width:520px;}
+  .nav-services__preview li a {padding:9px 4px;}
 }
 @media (max-width:850px) {
   :root {--side-padding:48px;--section-space:68px;}

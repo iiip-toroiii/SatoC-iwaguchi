@@ -1,8 +1,22 @@
 /* 佐藤医院：スマートフォン用メニュー（フレームワーク不要） */
 (() => {
   'use strict';
+  const header = document.querySelector('.site-header');
+  const hero = document.querySelector('.hero');
   const toggle = document.querySelector('.menu-toggle');
   const nav = document.querySelector('#primary-navigation');
+
+  if (header && hero) {
+    function updateHeaderBackground() {
+      const heroBottom = hero.getBoundingClientRect().bottom;
+      header.classList.toggle('is-past-hero', heroBottom <= header.offsetHeight);
+    }
+
+    window.addEventListener('scroll', updateHeaderBackground, { passive: true });
+    window.addEventListener('resize', updateHeaderBackground);
+    updateHeaderBackground();
+  }
+
   if (!toggle || !nav) return;
 
   function closeMenu() {
@@ -35,5 +49,5 @@
     }
   });
 
-  window.matchMedia('(min-width: 851px)').addEventListener('change', closeMenu);
+  window.matchMedia('(min-width: 1241px)').addEventListener('change', closeMenu);
 })();

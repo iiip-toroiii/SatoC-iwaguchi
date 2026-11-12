@@ -52,6 +52,28 @@
   window.matchMedia('(min-width: 1241px)').addEventListener('change', closeMenu);
 })();
 
+/* 診療科目の写真を5秒ごとに切り替える */
+(() => {
+  'use strict';
+  const gallery = document.querySelector('.photo-gallery');
+  if (!gallery) return;
+
+  const images = Array.from(gallery.querySelectorAll('img'));
+  if (images.length < 2) return;
+
+  let activeIndex = images.findIndex((image) => image.classList.contains('is-active'));
+  if (activeIndex < 0) {
+    activeIndex = 0;
+    images[activeIndex].classList.add('is-active');
+  }
+
+  window.setInterval(() => {
+    images[activeIndex].classList.remove('is-active');
+    activeIndex = (activeIndex + 1) % images.length;
+    images[activeIndex].classList.add('is-active');
+  }, 5000);
+})();
+
 
 /* =====================================================
    佐藤医院：マウス移動時の落ち葉アニメーション

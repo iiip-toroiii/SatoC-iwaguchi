@@ -64,11 +64,11 @@
   // ===== アニメーション設定 =====
   const SETTINGS = {
     imagePath: "assets/illustrations/leaf.svg",
-    interval: 150,        // 葉を生成する最短間隔（ms）
+    interval: 180,        // 葉を生成する最短間隔（ms）
     moveDistance: 25,    // 葉を生成するまでの移動距離（px）
     maxLeaves: 12,       // 同時に表示する最大枚数
-    minSize: 14,         // 葉の最小サイズ（px）
-    maxSize: 25,         // 葉の最大サイズ（px）
+    minSize: 25,         // 葉の最小サイズ（px）
+    maxSize: 55,         // 葉の最大サイズ（px）
     minDuration: 3000,   // 最短の落下時間（ms）
     maxDuration: 5000    // 最長の落下時間（ms）
   };
@@ -139,9 +139,9 @@
     );
 
     // 葉が落ちる方向と距離
-    const drift = random(-220, 220);
+    const drift = random(-2000, 2000);
     const fallDistance = random(130, 260);
-    const rotation = random(-90, 90);
+    const rotation = random(-80, 80);
 
     // マウスの位置から少しずらして発生
     const startX = x + random(-12, 12);

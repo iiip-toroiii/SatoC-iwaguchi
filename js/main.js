@@ -69,8 +69,8 @@
     maxLeaves: 20,       // 同時に表示する最大枚数
     minSize: 14,         // 葉の最小サイズ（px）
     maxSize: 25,         // 葉の最大サイズ（px）
-    minDuration: 1700,   // 最短の落下時間（ms）
-    maxDuration: 2600    // 最長の落下時間（ms）
+    minDuration: 2125,   // 最短の落下時間（ms）
+    maxDuration: 3250    // 最長の落下時間（ms）
   };
 
   // マウスが使える端末でのみ実行

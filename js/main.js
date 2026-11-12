@@ -64,13 +64,13 @@
   // ===== アニメーション設定 =====
   const SETTINGS = {
     imagePath: "assets/illustrations/leaf.svg",
-    interval: 90,        // 葉を生成する最短間隔（ms）
+    interval: 150,        // 葉を生成する最短間隔（ms）
     moveDistance: 25,    // 葉を生成するまでの移動距離（px）
-    maxLeaves: 20,       // 同時に表示する最大枚数
+    maxLeaves: 12,       // 同時に表示する最大枚数
     minSize: 14,         // 葉の最小サイズ（px）
     maxSize: 25,         // 葉の最大サイズ（px）
-    minDuration: 2125,   // 最短の落下時間（ms）
-    maxDuration: 3250    // 最長の落下時間（ms）
+    minDuration: 3000,   // 最短の落下時間（ms）
+    maxDuration: 5000    // 最長の落下時間（ms）
   };
 
   // マウスが使える端末でのみ実行
@@ -139,9 +139,9 @@
     );
 
     // 葉が落ちる方向と距離
-    const drift = random(-110, 110);
+    const drift = random(-220, 220);
     const fallDistance = random(130, 260);
-    const rotation = random(-360, 360);
+    const rotation = random(-90, 90);
 
     // マウスの位置から少しずらして発生
     const startX = x + random(-12, 12);
@@ -163,37 +163,51 @@
     layer.appendChild(leaf);
 
     // ===== ひらひら落ちる動き =====
+    leaf.animate(
+      [
+        { translate: "0px 0px" },
+        { translate: `${drift * 0.4}px 0px`, offset: 0.2 },
+        { translate: `${drift * -0.4}px 0px`, offset: 0.5 },
+        { translate: `${drift * 1.4}px 0px`, offset: 0.8 },
+        { translate: `${drift}px 0px` }
+      ],
+      {
+        duration: duration * 4,
+        easing: "ease-in-out",
+        fill: "forwards"
+      }
+    );
+
     const animation = leaf.animate(
       [
         {
-          transform:
-            "translate(0px, 0px) rotate(0deg) scale(0.8)",
+          transform: "translateY(0px) rotate(0deg) scale(0.8)",
           opacity: 0
         },
         {
           transform:
-            `translate(${drift * 0.2}px, ${fallDistance * 0.2}px)
+            `translateY(${fallDistance * 0.2}px)
              rotate(${rotation * 0.25}deg) scale(1)`,
           opacity: 0.85,
           offset: 0.2
         },
         {
           transform:
-            `translate(${drift * -0.2}px, ${fallDistance * 0.5}px)
+            `translateY(${fallDistance * 0.5}px)
              rotate(${rotation * 0.55}deg) scale(0.95)`,
           opacity: 0.85,
           offset: 0.5
         },
         {
           transform:
-            `translate(${drift * 0.7}px, ${fallDistance * 0.8}px)
+            `translateY(${fallDistance * 0.8}px)
              rotate(${rotation * 0.8}deg) scale(0.9)`,
           opacity: 0.5,
           offset: 0.8
         },
         {
           transform:
-            `translate(${drift}px, ${fallDistance}px)
+            `translateY(${fallDistance}px)
              rotate(${rotation}deg) scale(0.7)`,
           opacity: 0
         }

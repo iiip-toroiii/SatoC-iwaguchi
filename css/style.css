@@ -25,13 +25,13 @@
   --radius-md: 18px;
   /* フォント */
   --font-body: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", "Meiryo", sans-serif;
-  --font-size-body: clamp(15px, 1.1vw, 16px);
-  --font-size-heading: clamp(24px, 2.3vw, 31px);
+  --font-size-body: clamp(19px, calc(1.1vw + 4px), 20px);
+  --font-size-heading: clamp(28px, calc(2.3vw + 4px), 35px);
 }
 
 *, *::before, *::after {box-sizing: border-box;}
 html {scroll-behavior: smooth; scroll-padding-top: 110px;}
-body {position:relative; margin: 0; background: var(--color-bg); color: var(--color-text); font-family: var(--font-body); font-size: var(--font-size-body); line-height: 1.85; overflow-x: clip;}
+body {position:relative; margin: 0; background: var(--color-bg); color: var(--color-text); font-family: var(--font-body); font-size: var(--font-size-body); font-variant-east-asian:proportional-width; line-height: 1.85; overflow-x: clip;}
 /* =====================================================
    左右装飾：素材3点を縦に連結し右側だけ mirror 表示
    右に別画像を指定する必要はありません。
@@ -115,7 +115,7 @@ button {font: inherit;}
 .hero {position:relative;min-height:clamp(430px,51vw,660px);display:flex;align-items:end;background-image:linear-gradient(180deg,rgba(255,255,255,.48) 0%,transparent 29%,transparent 56%,rgba(14,70,38,.16) 100%),url('../assets/images/hospital_2_watercolor.jpg');background-size:cover;background-position:center 55%;}
 .hero::after {content:"";position:absolute;left:0;right:0;bottom:-2px;height:35px;background:linear-gradient(to bottom,transparent,var(--color-bg));pointer-events:none;}
 .hero__content {position:relative;z-index:2;padding-bottom:55px;}
-.hero h1 {margin:0;color:#0f924a;font-size:clamp(31px,3.7vw,50px);font-weight:800;letter-spacing:.08em;line-height:1.34;text-shadow:0 2px 7px #fff, 1px 1px 1px #f1fff1;}
+.hero h1 {margin:0;color:#0f924a;font-size:clamp(35px,calc(3.7vw + 4px),54px);font-weight:800;letter-spacing:.08em;line-height:1.34;text-shadow:0 2px 7px #fff, 1px 1px 1px #f1fff1;}
 .hero h1 span {display:inline-block;animation:hero-title-wave 2.25s ease-in-out infinite;}
 .hero h1 span:nth-child(2) {animation-delay:.12s;}
 .hero h1 span:nth-child(3) {animation-delay:.24s;}
@@ -129,7 +129,7 @@ button {font: inherit;}
   0%,100% {transform:translateY(0);}
   50% {transform:translateY(-10px);}
 }
-.hero__script {position:absolute;left:30%;bottom:clamp(142px,15vw,192px);margin:0;font:clamp(144px,20vw,308px)/1 "Waterfall",cursive;color:rgba(255,255,255,.28);white-space:nowrap;text-shadow:0 0 3px #fff9;pointer-events:none;transform:rotate(-5deg);}
+.hero__script {position:absolute;left:30%;bottom:clamp(142px,15vw,192px);margin:0;font:clamp(148px,calc(20vw + 4px),312px)/1 "Waterfall",cursive;color:rgba(255,255,255,.28);white-space:nowrap;text-shadow:0 0 3px #fff9;pointer-events:none;transform:rotate(-5deg);}
 
 /* -----------------------------------------------------
    03 セクション共通・草花の見出し
@@ -149,7 +149,7 @@ button {font: inherit;}
   .section-heading {gap:20px;}
 }
 
-.section-intro {max-width:920px;margin:-8px auto 34px;font-size:16px;line-height:2;}
+.section-intro {max-width:920px;margin:-8px auto 34px;font-size:20px;line-height:2;}
 
 /* -----------------------------------------------------
    04 診療時間表：1つずつ編集可能なHTML table
@@ -157,25 +157,25 @@ button {font: inherit;}
 .section--hours {padding-top:68px;}
 .hours-table-wrap {overflow-x:auto;overflow-y:hidden;max-width:100%;scrollbar-color:#b2d8c4 #e8f5f0;}
 .hours-table {width:100%;border-collapse:separate;border-spacing:8px 9px;table-layout:fixed;text-align:center;}
-.hours-table th,.hours-table td {border:0;border-radius:10px;height:86px;vertical-align:middle;padding:5px 3px;line-height:1.2;font-size:1.5em;}
+.hours-table th,.hours-table td {border:0;border-radius:10px;height:86px;vertical-align:middle;padding:5px 3px;line-height:1.2;font-size:calc(1.5em - 2px);}
 .hours-table thead th {font-weight:700;color:#315147;background:var(--color-green-soft);}
 .hours-table .col-time {width:24%;background:#c5e7d6;color:var(--color-green-deep);}
 .hours-table .time-slot {background:var(--color-lavender);font-weight:700;color:#22724f;}
 .hours-table .time-slot span,.hours-table .time-slot small {display:block;}
-.hours-table .time-slot span {font-size:21px;}
-.hours-table .time-slot small {font-size:clamp(16.5px,1.5vw,21px);font-weight:600;letter-spacing:-.025em;margin-top:4px;}
+.hours-table .time-slot span {font-size:25px;}
+.hours-table .time-slot small {font-size:clamp(20.5px,calc(1.5vw + 4px),25px);font-weight:600;letter-spacing:-.025em;margin-top:4px;}
 .hours-table .time-slot {white-space:nowrap;}
 .hours-table tbody tr:nth-child(2) .time-slot {background:var(--color-pink);}
 .hours-table .availability-cell.is-open {background:#d7ecdf;color:var(--color-green);font-weight:800;}
-.hours-table .availability-cell.is-closed {background:#f6d9df;color:#7d6671;font-size:31.5px;}
+.hours-table .availability-cell.is-closed {background:#f6d9df;color:#7d6671;font-size:35.5px;}
 .hours-open-icon {display:block;width:30px;height:37.5px;object-fit:contain;margin:0 auto;}
 .hours-table .day.is-holiday,.hours-table .availability-cell.is-holiday {background:#f4dbe2;}
 .hours-table .day.is-saturday,.hours-table .availability-cell.is-saturday {background:var(--color-lavender);}
 .hours-table .availability-cell.is-saturday.is-open {color:var(--color-green);}
 .hours-swipe-hint {display:none;}
-.hours-legend {display:flex;align-items:center;justify-content:center;gap:.45em;color:var(--color-green-deep);font-weight:800;font-size:19px;margin:28px 0 11px;}
+.hours-legend {display:flex;align-items:center;justify-content:center;gap:.45em;color:var(--color-green-deep);font-weight:800;font-size:23px;margin:28px 0 11px;}
 .hours-legend__open {display:inline-flex;align-items:center;}
-.hours-notes {text-align:center;color:var(--color-muted);max-width:800px;margin:auto;font-size:14px;}
+.hours-notes {text-align:center;color:var(--color-muted);max-width:800px;margin:auto;font-size:20px;}
 .hours-notes p {margin:4px 0;}
 
 /* -----------------------------------------------------
@@ -188,15 +188,16 @@ button {font: inherit;}
 .news-list__item a {display:flex;justify-content:space-between;gap:12px;align-items:center;padding:20px 24px;color:#2e4e46;text-decoration:none;transition:background .18s,color .18s;}
 .news-list__item a::before {content:"";width:12px;height:12px;flex:none;background:url('../assets/illustrations/leaf.svg') center / contain no-repeat;}
 .news-list__item a:hover {background:#e4f4ed;color:var(--color-green-deep);}
-.news-list__title {flex:1;font-size:17px;font-weight:600;}
-.news-list__arrow {font-size:27px;line-height:1;color:#69b793;}
+.news-list__title {flex:1;font-size:21px;font-weight:600;}
+.news-list__arrow {font-size:31px;line-height:1;color:#69b793;}
 
 /* -----------------------------------------------------
    06 院長挨拶
    ----------------------------------------------------- */
 .greeting-panel {display:grid;grid-template-columns:1.05fr .95fr;min-height:535px;border-radius:var(--radius-lg);overflow:hidden;background:#fff;box-shadow:0 9px 26px rgba(52,123,92,.07);}
-.greeting-panel__copy {position:relative;z-index:1;padding:clamp(25px,3.3vw,45px);padding-right:15px;background:linear-gradient(90deg,#ffffff 0%,#ffffff 82%,#fffefa 100%);font-size:clamp(14px,1.06vw,16px);line-height:1.88;}
+.greeting-panel__copy {position:relative;z-index:1;padding:clamp(25px,3.3vw,45px);padding-right:15px;background:linear-gradient(90deg,#ffffff 0%,#ffffff 82%,#fffefa 100%);font-size:clamp(18px,calc(1.06vw + 4px),20px);line-height:1.88;}
 .greeting-panel__copy p {margin:0 0 17px;}
+.greeting-panel__copy p:not(.signature),.section--staff .section-intro,.staff-feature li,.staff-card li {text-align:justify;text-justify:inter-character;}
 .greeting-panel__copy .signature {margin:18px 0 0;text-align:right;font-weight:700;color:#345f4e;}
 .greeting-panel__photo {width:100%;height:100%;max-height:none;object-fit:cover;object-position:60% center;}
 
@@ -207,15 +208,15 @@ button {font: inherit;}
 .services-grid--other .service-card:last-child {grid-column:1 / -1;width:calc((100% - clamp(34px,5vw,85px)) / 2);justify-self:center;}
 .service-card {text-align:center;padding:0 20px 7px;min-width:0;}
 .service-card__image {width:min(100%,250px);height:220px;object-fit:contain;margin:0 auto 8px;}
-.service-card h3 {font-size:clamp(19px,1.5vw,23px);margin:6px 0 16px;line-height:1.55;font-weight:700;color:#283e3e;}
-.service-card p {text-align:left;margin:0;font-size:15px;line-height:1.95;}
+.service-card h3 {font-size:clamp(23px,calc(1.5vw + 4px),27px);margin:6px 0 16px;line-height:1.55;font-weight:700;color:#283e3e;}
+.service-card p {text-align:left;margin:0;font-size:19px;line-height:1.95;}
 
 /* -----------------------------------------------------
    08 当院について
    ----------------------------------------------------- */
 .about-block {max-width:1040px;margin:auto;}
 .about-block img {width:100%;aspect-ratio:16/7.5;object-fit:cover;object-position:center 57%;border-radius:var(--radius-lg);}
-.about-block p {font-size:16px;line-height:2.15;margin:23px 3px 0;}
+.about-block p {font-size:20px;line-height:2.15;margin:23px 3px 0;}
 
 /* -----------------------------------------------------
    09 スタッフ紹介
@@ -237,14 +238,14 @@ button {font: inherit;}
 .staff-image-frame--nurse-manager img {object-position:100% 37%;}
 .staff-image-frame--office-staff img {object-position:center top;}
 .staff-image-frame--large {width:270px;margin-bottom:10px;}
-.staff-feature h3,.staff-card h3 {font-size:clamp(18px,1.5vw,21px);font-weight:800;margin:6px 0 16px;color:#254840;}
+.staff-feature h3,.staff-card h3 {font-size:clamp(22px,calc(1.5vw + 4px),25px);font-weight:800;margin:6px 0 16px;color:#254840;}
 .staff-feature ul,.staff-card ul {padding-left:1.05em;margin:0;line-height:1.9;}
 .staff-feature li,.staff-card li {margin-bottom:10px;}
 .staff-feature li::marker,.staff-card li::marker {color:#69b789;}
 .staff-grid {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(22px,4vw,54px);max-width:1090px;margin:auto;}
 .staff-card {min-width:0;}
-.staff-card h3 {font-size:18px;text-align:center;min-height:58px;}
-.staff-card ul {font-size:14px;}
+.staff-card h3 {font-size:22px;text-align:center;min-height:58px;}
+.staff-card ul {font-size:18px;}
 
 /* -----------------------------------------------------
    10 アクセス
@@ -252,8 +253,8 @@ button {font: inherit;}
 .access-map {overflow:hidden;max-width:1030px;margin:0 auto;border:8px solid rgba(255,255,255,.78);border-radius:var(--radius-lg);box-shadow:0 7px 18px #467c6330;background:#fff;}
 .access-map img {width:100%;height:auto;}
 .access-details {max-width:950px;margin:37px auto 0;display:grid;grid-template-columns:1.1fr .9fr;gap:34px;}
-.access-details h3 {margin:0 0 13px;font-size:20px;color:#285b47;}
-.access-details p,.contact-panel p {margin:3px 0;font-size:15px;}
+.access-details h3 {margin:0 0 13px;font-size:24px;color:#285b47;}
+.access-details p,.contact-panel p {margin:3px 0;font-size:19px;}
 .access-details__notice {padding-top:14px;color:var(--color-muted);}
 .contact-panel {border-left:1px solid #bedaca;padding-left:35px;}
 .contact-panel a {color:var(--color-green-deep);}
@@ -263,11 +264,11 @@ button {font: inherit;}
    ----------------------------------------------------- */
 .section--hours-bottom {padding-top:65px;}
 .section--departments {padding-top:64px;padding-bottom:95px;}
-.department-list {display:flex;flex-wrap:wrap;justify-content:center;gap:5px 15px;max-width:900px;list-style:none;padding:0;margin:-2px auto 40px;font-weight:800;color:#2d4f45;font-size:clamp(15px,1.45vw,18px);text-align:center;}
+.department-list {display:flex;flex-wrap:wrap;justify-content:center;gap:5px 15px;max-width:900px;list-style:none;padding:0;margin:-2px auto 40px;font-weight:800;color:#2d4f45;font-size:clamp(19px,calc(1.45vw + 4px),22px);text-align:center;}
 .department-list li+li::before {content:"・";margin-right:12px;color:var(--color-green);}
 .photo-gallery {max-width:900px;margin:0 auto;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px 34px;}
 .photo-gallery img {width:100%;height:230px;object-fit:cover;border-radius:40px;box-shadow:0 5px 16px #6ca88b17;}
-.department-message {margin:56px 0 0;text-align:center;font-size:15px;}
+.department-message {margin:56px 0 0;text-align:center;font-size:19px;}
 
 /* -----------------------------------------------------
    12 フッター、ニュース詳細ページ
@@ -276,18 +277,18 @@ button {font: inherit;}
 .site-footer__inner {max-width:var(--content-width);margin:auto;display:flex;justify-content:space-between;gap:28px;}
 .site-footer__brand .brand {margin-bottom:15px;}
 .site-footer__brand .brand img {width:43px;height:43px;}
-.site-footer__brand .brand strong {font-size:22px;}
-.site-footer__brand .brand small {font-size:11px;}
-.site-footer__brand p {margin:0;font-size:13px;}
-.site-footer__links {display:flex;flex-wrap:wrap;gap:10px 22px;align-content:center;justify-content:end;font-size:14px;}
+.site-footer__brand .brand strong {font-size:26px;}
+.site-footer__brand .brand small {font-size:15px;}
+.site-footer__brand p {margin:0;font-size:17px;}
+.site-footer__links {display:flex;flex-wrap:wrap;gap:10px 22px;align-content:center;justify-content:end;font-size:18px;}
 .site-footer__links a {color:#28654d;}
-.dummy-note {max-width:var(--content-width);margin:22px auto 0;padding-top:13px;border-top:1px solid #bfddcd;font-size:12px;color:#577365;}
+.dummy-note {max-width:var(--content-width);margin:22px auto 0;padding-top:13px;border-top:1px solid #bfddcd;font-size:16px;color:#577365;}
 .subpage-hero {min-height:270px;display:flex;align-items:end;background-image:linear-gradient(90deg,#effbf8ec,#ecfbf6ab),url('../assets/images/hospital_2_watercolor.jpg');background-size:cover;background-position:center 41%;}
 .subpage-hero .container {padding-bottom:35px;}
-.subpage-hero h1 {color:var(--color-green-deep);font-size:40px;line-height:1.3;margin:0;}
-.subpage-hero__eyebrow {margin:0 0 4px;font:italic 23px Georgia,serif;color:#13805b;}
+.subpage-hero h1 {color:var(--color-green-deep);font-size:44px;line-height:1.3;margin:0;}
+.subpage-hero__eyebrow {margin:0 0 4px;font:italic 27px Georgia,serif;color:#13805b;}
 .news-article {padding:32px 6px;border-bottom:1px dashed #afcebe;scroll-margin-top:15px;}
-.news-article h2 {font-size:22px;color:#236b4e;margin:0 0 10px;}
+.news-article h2 {font-size:26px;color:#236b4e;margin:0 0 10px;}
 .news-article p {margin:0;line-height:2.1;}
 .back-link {text-align:center;margin-top:40px;}
 .back-link a {display:inline-block;border:1px solid #8bc6a4;padding:12px 26px;border-radius:99px;background:#fff;color:var(--color-green-deep);font-weight:700;text-decoration:none;}
@@ -302,7 +303,7 @@ button {font: inherit;}
   .brand__wordmark small {font-size:11px;}
   .primary-navigation ul {gap:0;}
   .greeting-panel {min-height:580px;}
-  .greeting-panel__copy {font-size:14px;}
+  .greeting-panel__copy {font-size:18px;}
 }
 @media (min-width:851px) and (max-width:1240px) {
   .menu-toggle {position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;width:48px;height:48px;z-index:2;border:1px solid #8bc4a7;border-radius:12px;background:#fffffff2;color:#1a6e4c;cursor:pointer;box-shadow:0 1px 7px #236c3920;}
@@ -341,9 +342,9 @@ button {font: inherit;}
   .primary-navigation li+li {border-top:1px solid #e5f1e9;}
   .primary-navigation a {display:block;padding:11px 4px;text-shadow:none;}
   .hero {min-height:500px;}
-  .hero__script {font-size:176px;left:14%;bottom:155px;}
+  .hero__script {font-size:180px;left:14%;bottom:155px;}
   .greeting-panel {grid-template-columns:1.13fr .87fr;}
-  .greeting-panel__copy {padding:25px;font-size:13px;}
+  .greeting-panel__copy {padding:25px;font-size:17px;}
   .staff-feature {grid-template-columns:240px 1fr;gap:27px;}
   .staff-image-frame--large {width:230px;}
   .staff-grid {gap:25px;}
@@ -354,7 +355,7 @@ button {font: inherit;}
    14 スマートフォン
    ----------------------------------------------------- */
 @media (max-width:640px) {
-  :root {--side-padding:29px;--section-space:63px;--font-size-body:15px;}
+  :root {--side-padding:29px;--section-space:63px;--font-size-body:19px;}
   html {scroll-padding-top:88px;}
   .site-header {margin-bottom:-78px;}
   .site-header__inner {width:calc(100% - 42px);min-height:78px;}
@@ -365,68 +366,68 @@ button {font: inherit;}
   .primary-navigation {left:22px;right:22px;}
   .hero {min-height:440px;background-position:49% center;}
   .hero__content {padding-bottom:44px;}
-  .hero h1 {font-size:clamp(27px,7.2vw,37px);max-width:390px;}
-  .hero__script {font-size:clamp(96px,28vw,156px);bottom:140px;left:17%;}
-  .section-heading {font-size:24px;gap:6px;margin-bottom:30px;}
+  .hero h1 {font-size:clamp(31px,calc(7.2vw + 4px),41px);max-width:390px;}
+  .hero__script {font-size:clamp(100px,calc(28vw + 4px),160px);bottom:140px;left:17%;}
+  .section-heading {font-size:28px;gap:6px;margin-bottom:30px;}
   .section-heading::before,.section-heading::after {height:24px;}
   .section {padding-block:var(--section-space);}
   .section--hours {padding-top:49px;}
   .hours-table {min-width:495px;border-spacing:5px 7px;}
   .hours-table th,.hours-table td {height:72px;border-radius:8px;}
   .hours-table .col-time {width:126px;}
-  .hours-table .time-slot span {font-size:19.5px;}
-  .hours-table .time-slot small {font-size:18px;}
-  .hours-table .availability-cell.is-closed {font-size:27px;}
-  .hours-swipe-hint {display:block;margin:3px 5px 0;text-align:right;font-size:12px;color:#496f60;}
-.hours-legend {font-size:17px;}
-  .hours-notes {font-size:12px;line-height:1.7;}
+  .hours-table .time-slot span {font-size:23.5px;}
+  .hours-table .time-slot small {font-size:22px;}
+  .hours-table .availability-cell.is-closed {font-size:31px;}
+  .hours-swipe-hint {display:block;margin:3px 5px 0;text-align:right;font-size:16px;color:#496f60;}
+.hours-legend {font-size:21px;}
+  .hours-notes {font-size:18px;line-height:1.7;}
   .section--news {padding-top:55px;}
   .news-list__item a {padding:14px 8px;}
-  .news-list__title {font-size:15px;}
+  .news-list__title {font-size:19px;}
   .news-list__item a::before {width:10px;height:10px;}
   .greeting-panel {display:flex;flex-direction:column;background:#fff;min-height:auto;}
   .greeting-panel__photo {order:0;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;object-position:center 45%;}
-  .greeting-panel__copy {order:1;padding:23px 21px 25px;font-size:14px;line-height:1.92;}
+  .greeting-panel__copy {order:1;padding:23px 21px 25px;font-size:18px;line-height:1.92;}
   .greeting-panel__copy p {margin-bottom:14px;}
-  .section-intro {font-size:14px;margin-bottom:28px;}
+  .section-intro {font-size:18px;margin-bottom:28px;}
   .services-grid {grid-template-columns:1fr;row-gap:40px;}
   .services-grid--other .service-card:last-child {grid-column:auto;width:auto;}
   .service-card {padding:0 6px;}
   .service-card__image {height:180px;width:220px;}
-  .service-card h3 {font-size:19px;margin-bottom:9px;}
-  .service-card p {font-size:14px;}
+  .service-card h3 {font-size:23px;margin-bottom:9px;}
+  .service-card p {font-size:18px;}
   .about-block img {aspect-ratio:4/3;}
-  .about-block p {font-size:14px;line-height:2;}
+  .about-block p {font-size:18px;line-height:2;}
   .staff-feature {display:block;margin:20px auto 48px;}
   .staff-image-frame--large {width:220px;}
   .staff-feature .staff-copy h3 {text-align:center;}
-  .staff-feature ul {font-size:14px;}
+  .staff-feature ul {font-size:18px;}
   .staff-grid {grid-template-columns:1fr;gap:37px;}
   .staff-card .staff-image-frame {width:192px;}
   .staff-card h3 {min-height:0;margin:12px 0;}
-  .staff-card ul {font-size:14px;}
+  .staff-card ul {font-size:18px;}
   .access-details {grid-template-columns:1fr;gap:24px;}
-  .access-details h3 {font-size:18px;}
-  .access-details p,.contact-panel p {font-size:14px;}
+  .access-details h3 {font-size:22px;}
+  .access-details p,.contact-panel p {font-size:18px;}
   .contact-panel {border-left:0;border-top:1px solid #bedaca;padding:23px 0 0;}
-  .department-list {display:block;font-size:15px;line-height:2;}
+  .department-list {display:block;font-size:19px;line-height:2;}
   .department-list li+li::before {content:none;}
   .photo-gallery {gap:10px;}
   .photo-gallery img {height:155px;border-radius:40px;}
-  .department-message {font-size:13px;margin-top:32px;}
+  .department-message {font-size:17px;margin-top:32px;}
   .site-footer__inner {display:block;}
   .site-footer__links {justify-content:start;margin-top:18px;}
   .subpage-hero {min-height:225px;}
-  .subpage-hero h1 {font-size:32px;}
+  .subpage-hero h1 {font-size:36px;}
   .news-article {padding:28px 0;}
-  .news-article h2 {font-size:19px;}
-  .news-article p {font-size:14px;}
+  .news-article h2 {font-size:23px;}
+  .news-article p {font-size:18px;}
 }
 @media (max-width:360px) {
  :root {--side-padding:22px;}
  .brand__wordmark strong {font-size:19px;}
- .hero h1 {font-size:27px;}
- .section-heading {font-size:21px;}
+ .hero h1 {font-size:31px;}
+ .section-heading {font-size:25px;}
  .photo-gallery img {height:130px;}
 }
 @media (prefers-reduced-motion:reduce) {
